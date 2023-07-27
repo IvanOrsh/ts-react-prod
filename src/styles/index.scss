@@ -1,0 +1,19 @@
+@import "reset";
+@import "variables/global";
+@import "themes/normal";
+@import "themes/dark";
+
+@font-face {
+  font-family: "Consolas";
+  src: url("../fonts/Consolas.ttf") format("truetype");
+  /* Add other font formats if needed */
+}
+
+.app {
+  font: var(--font-m);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
