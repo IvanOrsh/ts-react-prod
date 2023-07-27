@@ -3,8 +3,13 @@ import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
+  const svgLoader: RuleSetRule = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
+
   const fileLoader: RuleSetRule = {
-    test: /\.(jpe?g|svg|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
+    test: /\.(jpe?g|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
     type: "asset/resource",
   };
 
@@ -36,5 +41,5 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, fileLoader, cssLoader];
+  return [svgLoader, fileLoader, typescriptLoader, cssLoader];
 }
