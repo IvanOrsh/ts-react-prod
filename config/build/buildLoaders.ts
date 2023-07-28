@@ -20,6 +20,16 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
       loader: "babel-loader",
       options: {
         presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["ru", "en"],
+              keyAsDefaultValue: ["ru"],
+              useI18nextDefaultValue: true,
+            },
+          ],
+        ],
       },
     },
   };
