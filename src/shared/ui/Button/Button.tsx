@@ -17,6 +17,7 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
 
   return (
     <button
+      type="button"
       className={classNames(cls.Button, {}, [className, cls[theme]])}
       {...otherProps}
     >
