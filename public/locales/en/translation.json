@@ -3,5 +3,8 @@
   "Главная": "Main",
   "О сайте": "About",
   "Свернуть": "Collapse",
-  "Развернуть": "Expand"
+  "Развернуть": "Expand",
+  "Произошла непредвиденная ошибка.": "An unexpected error has occurred.",
+  "Обновить страницу": "Update the page",
+  "Вызвать ошибку": "Throw error"
 }
