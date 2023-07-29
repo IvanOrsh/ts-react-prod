@@ -14,6 +14,7 @@ interface SidebarProps {
 export const Sidebar = ({ className }: SidebarProps) => {
   const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
+  const btnTitle = collapsed ? t("Развернуть") : t("Свернуть");
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -25,9 +26,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <button onClick={onToggle}>
-        {t(collapsed ? "Развернуть" : "Свернуть")}
-      </button>
+      <button onClick={onToggle}>{btnTitle}</button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />
