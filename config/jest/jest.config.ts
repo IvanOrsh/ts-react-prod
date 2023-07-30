@@ -35,6 +35,14 @@ const config: Config = {
   // The glob patterns Jest uses to detect test files
   testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
 
+  // jest-dom
+  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+
+  // Then all your className lookups on the styles object will be returned as-is (e.g., styles.foobar === 'foobar').
+  moduleNameMapper: {
+    "\\.s?css$": "identity-obj-proxy",
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
