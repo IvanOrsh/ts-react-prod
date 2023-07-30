@@ -2,7 +2,8 @@ import path from "path";
 import { Configuration } from "webpack";
 
 import { BuildPaths } from "../build/types/config";
-import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
+import { buildCssLoader } from "../build/loaders/buildCssLoader";
+import { buildFileLoader } from "../build/loaders/buildFileLoader";
 
 export default ({ config }: { config: Configuration }) => {
   const paths: BuildPaths = {
@@ -13,6 +14,7 @@ export default ({ config }: { config: Configuration }) => {
   };
   config.resolve!.modules!.push(paths.src);
   config.resolve!.extensions!.push(".ts", "tsx");
-  config.module!.rules!.push(buildCssLoaders(true));
+  config.module!.rules!.push(buildFileLoader());
+  config.module!.rules!.push(buildCssLoader(true));
   return config;
 };

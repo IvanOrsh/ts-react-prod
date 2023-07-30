@@ -1,6 +1,7 @@
 import { RuleSetRule } from "webpack";
 import { BuildOptions } from "./types/config";
-import { buildCssLoaders } from "./loaders/buildCssLoaders";
+import { buildCssLoader } from "./loaders/buildCssLoader";
+import { buildFileLoader } from "./loaders/buildFileLoader";
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
   const svgLoader: RuleSetRule = {
@@ -8,10 +9,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     use: ["@svgr/webpack"],
   };
 
-  const fileLoader: RuleSetRule = {
-    test: /\.(jpe?g|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
-    type: "asset/resource",
-  };
+  const fileLoader: RuleSetRule = buildFileLoader();
 
   const babelLoader: RuleSetRule = {
     test: /\.(js|jsx|tsx)$/,
@@ -34,7 +32,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     },
   };
 
-  const cssLoader: RuleSetRule = buildCssLoaders(options.isDev);
+  const cssLoader: RuleSetRule = buildCssLoader(options.isDev);
 
   const typescriptLoader: RuleSetRule = {
     test: /\.tsx?$/,
