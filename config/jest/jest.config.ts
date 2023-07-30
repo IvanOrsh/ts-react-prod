@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
 import type { Config } from "jest";
 
 const config: Config = {
@@ -41,6 +42,8 @@ const config: Config = {
   // Then all your className lookups on the styles object will be returned as-is (e.g., styles.foobar === 'foobar').
   moduleNameMapper: {
     "\\.s?css$": "identity-obj-proxy",
+    // mocking svg
+    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
 
   // All imported modules in your tests should be mocked automatically
