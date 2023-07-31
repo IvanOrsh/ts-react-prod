@@ -4,3 +4,5 @@ extractedTranslations
 build-storybook.log
 temp.txt
 storybook-static
+.loki/report.html
+.loki/report.json
