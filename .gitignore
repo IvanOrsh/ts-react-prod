@@ -1,3 +1,5 @@
 /build
 node_modules
 extractedTranslations
+build-storybook.log
+temp.txt
