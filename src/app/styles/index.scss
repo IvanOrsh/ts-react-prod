@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: Consolas;
-  src: url("../fonts/Consolas.ttf") format("truetype");
+  src: url("/src/shared/assets/fonts/Consolas.ttf") format("truetype");
 
   /* Add other font formats if needed */
 }
@@ -14,7 +14,8 @@
   font: var(--font-m);
   background: var(--bg-color);
   color: var(--primary-color);
-  min-height: 100vh;
+
+  // min-height: 100vh;
 }
 
 .content-page {
