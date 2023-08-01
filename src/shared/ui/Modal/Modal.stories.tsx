@@ -32,7 +32,7 @@ const ModalWithHooks = () => {
         Open Modal
       </Button>
 
-      <Modal className="modal" isOpen={isAuthModal} onClose={onToggleModal}>
+      <Modal isOpen={isAuthModal} onClose={onToggleModal}>
         <span>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Reprehenderit tempora aspernatur temporibus exercitationem praesentium
