@@ -9,6 +9,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:i18next/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
   ],
   overrides: [
@@ -21,13 +22,25 @@ module.exports = {
         sourceType: "script",
       },
     },
+    {
+      files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react", "i18next", "prettier"],
+  plugins: [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "i18next",
+    "prettier",
+  ],
   rules: {
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],
@@ -53,5 +66,7 @@ module.exports = {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
     ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
   },
 };
