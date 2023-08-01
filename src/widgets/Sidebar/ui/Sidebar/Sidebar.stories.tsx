@@ -5,7 +5,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 
 const meta = {
-  title: "shared/Sidebar",
+  title: "widgets/Sidebar",
   component: Sidebar,
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
