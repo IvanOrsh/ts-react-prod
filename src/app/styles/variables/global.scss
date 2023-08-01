@@ -9,7 +9,15 @@
   --font-size-xl: 32px;
   --font-line-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
+  // component sizes
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-collapsed-width: 80px;
+
+  // z-indexes
+  --modal-z-index: 10;
+
+  // colors
+  --overlay-color: rgba(0 0 0 / 60%);
 }

@@ -10,8 +10,11 @@
   /* Add other font formats if needed */
 }
 
-.app {
+body {
   font: var(--font-m);
+}
+
+.app {
   background: var(--bg-color);
   color: var(--primary-color);
 
@@ -20,6 +23,8 @@
 
 .content-page {
   display: flex;
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .page-wrapper {
