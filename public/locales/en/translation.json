@@ -8,5 +8,7 @@
   "Обновить страницу": "Update the page",
   "Вызвать ошибку": "Throw error",
   "Короткий язык": "En",
-  "Войти": "Log in"
+  "Войти": "Log in",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }
