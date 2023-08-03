@@ -20,13 +20,15 @@ interface ModalProps {
   isOpen?: boolean;
   onClose?: () => void;
   element?: HTMLElement;
+  lazy?: boolean;
 }
 
 export const Modal = (props: PropsWithChildren<ModalProps>) => {
-  const { className, children, isOpen, onClose, element } = props;
+  const { className, children, isOpen, onClose, element, lazy } = props;
   const { theme } = useTheme();
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
   const mods: Record<string, boolean> = {
@@ -67,6 +69,16 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal element={element}>
