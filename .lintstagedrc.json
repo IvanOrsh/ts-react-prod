@@ -1,4 +1,4 @@
 {
-  "**/*.{ts,tsx}": ["npm run lint:ts", "npm run test:unit "],
+  "**/*.{ts,tsx}": ["npm run lint:ts", "npm run test:unit:staged"],
   "**/*.{css,scss}": ["npm run lint:scss"]
 }
