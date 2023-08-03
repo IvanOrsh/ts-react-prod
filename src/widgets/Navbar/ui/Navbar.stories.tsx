@@ -11,23 +11,36 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  decorators: [
-    StoreDecorator({
-      loginForm: {
-        username: "John",
-        password: "pass123",
-      },
-    }),
-  ],
+  decorators: [ThemeDecorator(Theme.LIGHT)],
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
-  decorators: [ThemeDecorator(Theme.LIGHT)],
+export const Authenticated: Story = {
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {},
+      },
+    }),
+  ],
 };
 
-export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)],
+export const AuthenticatedDark: Story = {
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {},
+      },
+    }),
+    ThemeDecorator(Theme.DARK),
+  ],
+};
+
+export const NotAuthenticated: Story = {
+  decorators: [StoreDecorator({})],
+};
+export const NotAuthenticatedDark: Story = {
+  decorators: [StoreDecorator({}), ThemeDecorator(Theme.DARK)],
 };
