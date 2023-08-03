@@ -1,0 +1,4 @@
+{
+  "**/*.{ts,tsx}": ["npm run lint:ts", "npm run test:unit "],
+  "**/*.{css,scss}": ["npm run lint:scss"]
+}
