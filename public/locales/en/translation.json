@@ -9,6 +9,9 @@
   "Вызвать ошибку": "Throw error",
   "Короткий язык": "En",
   "Войти": "Log in",
+  "Выйти": "Log out",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }
