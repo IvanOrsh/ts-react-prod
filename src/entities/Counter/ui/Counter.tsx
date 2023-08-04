@@ -2,7 +2,7 @@
 import { useAppDispatch, useAppSelector } from "app/providers/StoreProvider";
 
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { counterActions } from "../model/slice/counterSlcie";
+import { counterActions } from "../model/slice/counterSlice";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 
 export const Counter = () => {
