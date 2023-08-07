@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useAppSelector, useAppDispatch } from "app/providers/StoreProvider";
+import { useAppSelector, useAppDispatch } from "shared/lib/hooks";
 import { getUserAuthData, userActions } from "entities/User";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
@@ -13,7 +13,7 @@ interface NavBarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavBarProps) => {
+export const Navbar = memo(({ className }: NavBarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setAuthModal] = useState(false);
   const dispatch = useAppDispatch();
@@ -61,4 +61,4 @@ export const Navbar = ({ className }: NavBarProps) => {
       )}
     </div>
   );
-};
+});

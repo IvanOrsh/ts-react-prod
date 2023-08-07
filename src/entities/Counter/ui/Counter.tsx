@@ -1,5 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
-import { useAppDispatch, useAppSelector } from "app/providers/StoreProvider";
+import { useAppDispatch, useAppSelector } from "shared/lib/hooks";
 
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { counterActions } from "../model/slice/counterSlice";

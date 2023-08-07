@@ -2,7 +2,8 @@ import { PropsWithChildren, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Reducer } from "@reduxjs/toolkit";
 
-import { useAppStore, RootStateKeys } from "app/providers/StoreProvider";
+import { RootStateKeys } from "app/providers/StoreProvider";
+import { useAppStore } from "shared/lib/hooks";
 
 export type ReducersList = {
   [name in RootStateKeys]?: Reducer;

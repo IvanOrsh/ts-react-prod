@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
 
-import { useAppDispatch } from "./providers/StoreProvider";
+import { useAppDispatch } from "shared/lib/hooks";
 import { userActions } from "entities/User";
 import { useTheme } from "app/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
