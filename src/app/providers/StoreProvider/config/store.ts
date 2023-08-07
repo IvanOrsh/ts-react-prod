@@ -1,15 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-// experimental, TODO: import from public (index.ts)
-// slices
-import { counterSlice } from "entities/Counter/model/slice/counterSlice";
-import { userSlice } from "entities/User/model/slice/userSlice";
-import { loginSlice } from "features/AuthByUsername/model/slice/loginSlice";
-
-// reducers
-import { counterReducer } from "entities/Counter";
-import { userReducer } from "entities/User";
-import { loginReducer } from "features/AuthByUsername";
+import { counterSlice, counterReducer } from "entities/Counter";
+import { userSlice, userReducer } from "entities/User";
+import { profileReducer, profileSlice } from "entities/Profile";
+import { loginSlice, loginReducer } from "features/AuthByUsername";
 
 // reducer manager
 import { createReducerManager } from "./reducerManager";
@@ -18,6 +12,7 @@ export interface RootState {
   [counterSlice.name]: ReturnType<typeof counterReducer>;
   [userSlice.name]: ReturnType<typeof userReducer>;
   [loginSlice.name]?: ReturnType<typeof loginReducer>;
+  [profileSlice.name]?: ReturnType<typeof profileReducer>;
 }
 
 export type RootStateKeys = keyof RootState;
