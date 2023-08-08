@@ -1,12 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { ReducersMapObject, configureStore } from "@reduxjs/toolkit";
 
 import { counterSlice, counterReducer } from "entities/Counter";
 import { userSlice, userReducer } from "entities/User";
 import { profileReducer, profileSlice } from "entities/Profile";
 import { loginSlice, loginReducer } from "features/AuthByUsername";
-
-// reducer manager
 import { createReducerManager } from "./reducerManager";
+import { $api } from "shared/api/api";
+import { NavigateFunction } from "react-router-dom";
 
 export interface RootState {
   [counterSlice.name]: ReturnType<typeof counterReducer>;
@@ -17,17 +17,31 @@ export interface RootState {
 
 export type RootStateKeys = keyof RootState;
 
-const reducerManager = createReducerManager<RootState>({
-  [counterSlice.name]: counterReducer,
-  [userSlice.name]: userReducer,
-});
+export function createReduxStore(
+  initialState?: RootState,
+  asyncReducers?: ReducersMapObject<RootState>,
+  navigate?: NavigateFunction,
+) {
+  const reducerManager = createReducerManager<RootState>({
+    [counterSlice.name]: counterReducer,
+    [userSlice.name]: userReducer,
+    ...asyncReducers,
+  });
 
-export function createReduxStore(initialState?: RootState) {
   const store = configureStore({
     reducer: reducerManager.reducer,
     preloadedState: initialState,
     enhancers: [reducerManager.enhancer],
     devTools: __IS_DEV__,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: $api,
+            navigate,
+          },
+        },
+      }),
   });
 
   return store;

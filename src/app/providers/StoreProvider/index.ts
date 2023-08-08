@@ -5,4 +5,10 @@ export {
   AppDispatch,
   AppStore,
 } from "./config/store";
-export type { StateSchema, StateSchemaKey } from "./config/StateSchema";
+export type {
+  StateSchema,
+  StateSchemaKey,
+  AsyncReducersKey,
+  ThunkExtraArg,
+  ThunkConfig,
+} from "./config/StateSchema";
