@@ -12,5 +12,10 @@
   "Произошла ошибка при загрузку профиля": "There was an error while loading the profile",
   "Попробуйте обновить страницу": "Try refreshing the page",
   "Отменить": "Cancel",
-  "Сохранить": "Save"
+  "Сохранить": "Save",
+  "Ошибка сервера при сохранении": "Server error while saving",
+  "Некорректный возраст": "Invalid value for age",
+  "Некорректный регион": "Invalid value for country",
+  "Имя и фамилия обязательны": "First name and last name are required",
+  "Данные не указаны": "No user data passed"
 }

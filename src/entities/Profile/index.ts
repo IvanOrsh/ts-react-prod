@@ -1,4 +1,8 @@
-export { Profile, ProfileSchema } from "./model/types/profile";
+export {
+  Profile,
+  ProfileSchema,
+  ValidateProfileError,
+} from "./model/types/profile";
 export {
   profileSlice,
   profileActions,
@@ -12,5 +16,6 @@ export {
   getProfileIsLoading,
   getProfileReadonly,
   getProfileForm,
+  getProfileValidateErrors,
 } from "./model/selectors";
 export { ProfileCard } from "./ui/ProfileCard/ProfileCard";

@@ -1,8 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { ThunkConfig } from "app/providers/StoreProvider";
-import { Profile } from "../../types/profile";
+import { Profile, ValidateProfileError } from "../../types/profile";
 import { getProfileForm } from "../../selectors";
+import { validateProfileData } from "../validateProfileData/validateProfileData";
 
 // Returned
 // ThunkArg
@@ -10,12 +11,18 @@ import { getProfileForm } from "../../selectors";
 export const updateProfileData = createAsyncThunk<
   Profile,
   void,
-  ThunkConfig<string>
+  ThunkConfig<ValidateProfileError[]>
 >(
   "profile/updateProfileDate",
   // Declare the type your function argument here:
   async (_, { extra, rejectWithValue, getState }) => {
     const formData = getProfileForm(getState());
+
+    const errors = validateProfileData(formData);
+
+    if (errors.length) {
+      return rejectWithValue(errors);
+    }
 
     try {
       const response = await extra.api.put<Profile>("/profile", formData);
@@ -26,7 +33,7 @@ export const updateProfileData = createAsyncThunk<
       return response.data;
     } catch (e) {
       console.log(e);
-      return rejectWithValue("error");
+      return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
     }
   },
 );
