@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 import {
   DynamicModuleLoader,
@@ -30,7 +29,6 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-  const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
   const formData = useAppSelector(getProfileForm);
   const isLoading = useAppSelector(getProfileIsLoading);

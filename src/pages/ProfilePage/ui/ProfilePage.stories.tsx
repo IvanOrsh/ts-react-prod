@@ -9,7 +9,16 @@ const meta = {
   title: "page/ProfilePage",
   component: ProfilePage,
   tags: ["autodocs"],
-  decorators: [StoreDecorator({})],
+  decorators: [
+    StoreDecorator({
+      user: {
+        authData: {
+          id: "1",
+          username: "admin",
+        },
+      },
+    }),
+  ],
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;
