@@ -26,3 +26,9 @@ export const Primary: Story = {};
 export const Dark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
 };
+
+export const Readonly: Story = {
+  args: {
+    readonly: true,
+  },
+};
