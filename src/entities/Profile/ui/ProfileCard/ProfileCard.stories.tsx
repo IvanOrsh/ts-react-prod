@@ -5,7 +5,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 
 const meta = {
-  title: "entities/ProfilePage",
+  title: "entities/ProfileCard",
   component: ProfileCard,
   tags: ["autodocs"],
   args: {
