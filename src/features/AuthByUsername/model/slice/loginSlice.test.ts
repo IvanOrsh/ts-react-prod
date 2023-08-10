@@ -1,4 +1,4 @@
-import { loginAction, loginReducer } from "./loginSlice";
+import { loginActions, loginReducer } from "./loginSlice";
 import { LoginSchema } from "../types/loginSchema";
 import { loginByUsername } from "../service/loginByUsername/loginByUsername";
 
@@ -8,7 +8,7 @@ describe("loginSlice", () => {
       username: "",
     };
     const action = {
-      type: loginAction.setUsername,
+      type: loginActions.setUsername,
       payload: "user",
     };
 
@@ -22,7 +22,7 @@ describe("loginSlice", () => {
       password: "",
     };
     const action = {
-      type: loginAction.setPassword,
+      type: loginActions.setPassword,
       payload: "password",
     };
 

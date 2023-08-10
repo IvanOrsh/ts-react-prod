@@ -6,7 +6,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { loginAction, loginReducer } from "../../model/slice/loginSlice";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import {
   getLoginError,
   getLoginIsLoading,
@@ -40,14 +40,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
   const onChangeUsername = useCallback(
     (value: string) => {
-      dispatch(loginAction.setUsername(value));
+      dispatch(loginActions.setUsername(value));
     },
     [dispatch],
   );
 
   const onChangePassword = useCallback(
     (value: string) => {
-      dispatch(loginAction.setPassword(value));
+      dispatch(loginActions.setPassword(value));
     },
     [dispatch],
   );
