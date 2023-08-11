@@ -5,14 +5,9 @@ import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ProfilePage } from "pages/ProfilePage";
 
-// --- starts here
-// supposed to be "protected" routes functionality
-// TODO: refactor!
-type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = RouteProps & {
   authOnly?: boolean;
 };
-
-// --- ends here
 
 export enum AppRoutes {
   MAIN = "main",

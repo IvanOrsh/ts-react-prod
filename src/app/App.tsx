@@ -1,17 +1,19 @@
 import { Suspense, useEffect } from "react";
 
-import { useAppDispatch } from "shared/lib/hooks";
-import { userActions } from "entities/User";
-import { useTheme } from "app/providers/ThemeProvider";
-import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
+import { useTheme } from "app/providers/ThemeProvider";
+import { useAppDispatch, useAppSelector } from "shared/lib/hooks";
+import { getUserMounted, userActions } from "entities/User";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { classNames } from "shared/lib/classNames/classNames";
 
 const App = () => {
   const { theme } = useTheme();
 
   const dispatch = useAppDispatch();
+
+  const mounted = useAppSelector(getUserMounted);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -23,7 +25,7 @@ const App = () => {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {mounted && <AppRouter />}
         </div>
       </Suspense>
     </div>
