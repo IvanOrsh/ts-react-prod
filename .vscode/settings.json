@@ -3,5 +3,65 @@
   "stylelint.validate": ["css", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
+  },
+  "folderTemplates.structures": [
+    {
+      "name": "My Custom Template",
+      "omitParentDirectory": true,
+      "structure": [
+        {
+          "fileName": "<FTName>.tsx",
+          "template": "Typescript Functional Component"
+        },
+        {
+          "fileName": "<FTName>.module.scss",
+          "template": "SCSS Module"
+        },
+        {
+          "fileName": "<FTName>.stories.tsx",
+          "template": "Storybook Template"
+        }
+      ]
+    }
+  ],
+  "folderTemplates.fileTemplates": {
+    "Typescript Functional Component": [
+      "import { useTranslation } from 'react-i18next';",
+      "import { classNames } from 'shared/lib/classNames/classNames';",
+      "",
+      "import cls from './<FTName>.module.scss';",
+      "",
+      "interface <FTName>Props {",
+      "className?: string;",
+      "}",
+      "",
+      "export const <FTName> = ({ className }: <FTName>Props) => {",
+      "const { t } = useTranslation();",
+      "return (",
+      "<div className={classNames(cls.<FTName>, {}, [className])}>",
+
+      "</div>",
+      ");",
+      "}"
+    ],
+    "SCSS Module": [".<FTName> { }"],
+    "Storybook Template": [
+      "import type { Meta, StoryObj } from \"@storybook/react\";",
+      "import { <FTName> } from \"./<FTName>\";",
+      "import { ThemeDecorator } from \"shared/config/storybook/ThemeDecorator/ThemeDecorator\";",
+      "import { Theme } from \"app/providers/ThemeProvider\";",
+      "const meta = {",
+      "title: \"/<FTName>\",",
+      "component: <FTName>,",
+      "parameters: {",
+      "layout: \"centered\",",
+      "},",
+      "tags: [\"autodocs\"],",
+      "decorators: [ThemeDecorator(Theme.LIGHT)],",
+      "} satisfies Meta<typeof <FTName>>;",
+      "export default meta;",
+      "type Story = StoryObj<typeof meta>;",
+      "export const Primary: Story = {};"
+    ]
   }
 }
