@@ -4,6 +4,7 @@ import { counterSlice, counterReducer } from "entities/Counter";
 import { userSlice, userReducer } from "entities/User";
 import { profileReducer, profileSlice } from "entities/Profile";
 import { loginSlice, loginReducer } from "features/AuthByUsername";
+import { articleDetailsSlice, articleDetailsReducer } from "entities/Article";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "shared/api/api";
 import { NavigateFunction } from "react-router-dom";
@@ -13,6 +14,7 @@ export interface RootState {
   [userSlice.name]: ReturnType<typeof userReducer>;
   [loginSlice.name]?: ReturnType<typeof loginReducer>;
   [profileSlice.name]?: ReturnType<typeof profileReducer>;
+  [articleDetailsSlice.name]?: ReturnType<typeof articleDetailsReducer>;
 }
 
 export type RootStateKeys = keyof RootState;
