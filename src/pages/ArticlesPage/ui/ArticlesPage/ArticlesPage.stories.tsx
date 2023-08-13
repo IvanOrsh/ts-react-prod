@@ -5,7 +5,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 
 const meta = {
-  title: "pages/ArticlesPage",
+  title: "page/ArticlesPage",
   component: ArticlesPage,
   parameters: {
     layout: "centered",
