@@ -1,11 +1,15 @@
-import { useEffect, memo, useCallback } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch, useAppSelector } from "shared/lib/hooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useInitialEffect,
+} from "shared/lib/hooks";
 import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import {
@@ -75,11 +79,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchArticleById(id!));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => dispatch(fetchArticleById(id!)));
 
   let content;
 

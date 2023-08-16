@@ -1,10 +1,14 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 
 import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch, useAppSelector } from "shared/lib/hooks";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useInitialEffect,
+} from "shared/lib/hooks";
 import {
   fetchProfileData,
   profileReducer,
@@ -50,11 +54,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => dispatch(fetchProfileData()));
 
   const onChangeFirstName = useCallback(
     (value?: string) => {
