@@ -5,6 +5,10 @@ import { userSlice, userReducer } from "entities/User";
 import { profileReducer, profileSlice } from "entities/Profile";
 import { loginSlice, loginReducer } from "features/AuthByUsername";
 import { articleDetailsSlice, articleDetailsReducer } from "entities/Article";
+import {
+  articleDetailsCommentsSlice,
+  articleDetailsCommentsReducer,
+} from "pages/ArticleDetailsPage";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "shared/api/api";
 import { NavigateFunction } from "react-router-dom";
@@ -15,6 +19,9 @@ export interface RootState {
   [loginSlice.name]?: ReturnType<typeof loginReducer>;
   [profileSlice.name]?: ReturnType<typeof profileReducer>;
   [articleDetailsSlice.name]?: ReturnType<typeof articleDetailsReducer>;
+  [articleDetailsCommentsSlice.name]?: ReturnType<
+    typeof articleDetailsCommentsReducer
+  >;
 }
 
 export type RootStateKeys = keyof RootState;
