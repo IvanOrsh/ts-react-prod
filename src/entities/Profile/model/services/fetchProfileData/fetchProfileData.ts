@@ -8,21 +8,21 @@ import { Profile } from "../../types/profile";
 // ThunkApiConfig
 export const fetchProfileData = createAsyncThunk<
   Profile,
-  void,
+  string,
   ThunkConfig<string>
 >(
   "profile/fetchProfileData",
   // Declare the type your function argument here:
-  async (_, { extra, rejectWithValue }) => {
+  async (profileId, thunkApi) => {
+    const { extra, rejectWithValue } = thunkApi;
     try {
-      const response = await extra.api.get<Profile>("/profile");
+      const response = await extra.api.get<Profile>(`/profile/${profileId}`);
       if (!response.data) {
         throw new Error();
       }
 
       return response.data;
     } catch (e) {
-      console.log(e);
       return rejectWithValue("error");
     }
   },

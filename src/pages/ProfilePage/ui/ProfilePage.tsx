@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { useParams } from "react-router-dom";
 
 import {
   DynamicModuleLoader,
@@ -38,6 +39,7 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation("profile");
+  const { id: profileId } = useParams<{ id: string }>();
 
   const dispatch = useAppDispatch();
   const formData = useAppSelector(getProfileForm);
@@ -54,7 +56,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [ValidateProfileError.NO_DATA]: t("Данные не указаны"),
   };
 
-  useInitialEffect(() => dispatch(fetchProfileData()));
+  useInitialEffect(() => {
+    if (profileId) {
+      dispatch(fetchProfileData(profileId));
+    }
+  });
 
   const onChangeFirstName = useCallback(
     (value?: string) => {
