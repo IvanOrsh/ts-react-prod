@@ -11,7 +11,6 @@
       "userId": "2"
     }
   ],
-
   "articles": [
     {
       "id": "1",
@@ -20,7 +19,9 @@
       "img": "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/38a9cafe-c53e-47f2-f431-428120462000/public",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -83,7 +84,6 @@
       ]
     }
   ],
-
   "comments": [
     {
       "id": "1",
@@ -102,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "comment",
+      "id": "YdO3WkN"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user's comment",
+      "id": "ywQb4Nf"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "new comment",
+      "id": "e1LvMgn"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "still works",
+      "id": "cx8lq6Z"
     }
   ],
   "users": [
@@ -135,7 +159,7 @@
     {
       "id": "2",
       "firstName": "John",
-      "lastName": "Doe",
+      "lastName": "Smith",
       "age": 36,
       "currency": "EUR",
       "country": "Belarus",
