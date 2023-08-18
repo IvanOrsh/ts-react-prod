@@ -21,7 +21,7 @@ interface DynamicModuleLoaderProps {
 export const DynamicModuleLoader = (
   props: PropsWithChildren<DynamicModuleLoaderProps>,
 ) => {
-  const { reducers, removeAfterUnmount, children } = props;
+  const { reducers, removeAfterUnmount = true, children } = props;
 
   //===================
   // TODO: to be fixed!
