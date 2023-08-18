@@ -126,6 +126,12 @@
       "userId": "2",
       "text": "still works",
       "id": "cx8lq6Z"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test 123 test",
+      "id": "icPs8eM"
     }
   ],
   "users": [
