@@ -7,6 +7,7 @@ import { ValidateProfileError } from "../../types/profile";
 
 describe("updateProfileData", () => {
   const data = {
+    id: "1",
     firstName: "Larry",
     lastName: "The Abdul",
     age: 35,
@@ -35,7 +36,7 @@ describe("updateProfileData", () => {
 
     const result = await thunk.callThunk();
 
-    expect(thunk.api.put).toHaveBeenCalledWith("/profile", data);
+    expect(thunk.api.put).toHaveBeenCalledWith("/profile/1", data);
     expect(result.meta.requestStatus).toBe("fulfilled");
     expect(result.payload).toEqual(data);
   });
