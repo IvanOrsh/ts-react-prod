@@ -6,3 +6,8 @@ export {
   articleDetailsActions,
   articleDetailsReducer,
 } from "./model/slice/articleDetailsSlice";
+export {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from "./model/selectors/articleDetails";
