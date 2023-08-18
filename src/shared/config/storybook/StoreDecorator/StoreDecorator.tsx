@@ -6,11 +6,13 @@ import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicM
 import { profileReducer } from "entities/Profile";
 import { loginReducer } from "features/AuthByUsername";
 import { articleDetailsReducer } from "entities/Article";
+import { addCommentFormReducer } from "features/addCommentForm";
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
 };
 
 export const StoreDecorator =
