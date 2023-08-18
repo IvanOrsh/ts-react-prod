@@ -126,8 +126,6 @@ describe("addCommentForArticle", () => {
 
     const result = await thunk.callThunk(commentText);
 
-    console.log(result);
-
     expect(thunk.dispatch).toHaveBeenCalledTimes(2); // user, article
     expect(thunk.api.post).toHaveBeenCalledTimes(1);
     expect(result.meta.requestStatus).toBe("rejected");
