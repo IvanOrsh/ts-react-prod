@@ -6,13 +6,13 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Text } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { classNames } from "shared/lib/classNames/classNames";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 import cls from "./CommentCard.module.scss";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
+  comment?: Comment;
   isLoading?: boolean;
 }
 
@@ -21,7 +21,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentCard, {}, [className])}>
+      <div
+        className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+      >
         <div className={cls.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton width={100} height={16} className={cls.username} />
@@ -29,6 +31,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
         <Skeleton width="100%" height={50} className={cls.text} />
       </div>
     );
+  }
+
+  if (!comment) {
+    return null;
   }
 
   return (
