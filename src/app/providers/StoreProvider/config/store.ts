@@ -6,6 +6,10 @@ import { profileReducer, profileSlice } from "entities/Profile";
 import { loginSlice, loginReducer } from "features/AuthByUsername";
 import { articleDetailsSlice, articleDetailsReducer } from "entities/Article";
 import {
+  addCommentFormSlice,
+  addCommentFormReducer,
+} from "features/addCommentForm";
+import {
   articleDetailsCommentsSlice,
   articleDetailsCommentsReducer,
 } from "pages/ArticleDetailsPage";
@@ -22,6 +26,7 @@ export interface RootState {
   [articleDetailsCommentsSlice.name]?: ReturnType<
     typeof articleDetailsCommentsReducer
   >;
+  [addCommentFormSlice.name]?: ReturnType<typeof addCommentFormReducer>;
 }
 
 export type RootStateKeys = keyof RootState;
