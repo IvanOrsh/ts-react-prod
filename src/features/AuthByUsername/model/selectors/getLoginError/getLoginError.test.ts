@@ -11,7 +11,7 @@ describe("getLoginError", () => {
     expect(getLoginError(state as StateSchema)).toEqual("error message");
   });
 
-  test("should return undefined is provided state is empty", () => {
+  test("should return undefined if provided state is empty", () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getLoginError(state as StateSchema)).toBeUndefined();
   });
