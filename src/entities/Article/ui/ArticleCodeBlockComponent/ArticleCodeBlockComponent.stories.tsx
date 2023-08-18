@@ -5,7 +5,7 @@ import { Theme } from "app/providers/ThemeProvider";
 import { ArticleBlockType } from "entities/Article/model/types/article";
 
 const meta = {
-  title: "entities/ArticleCodeBlockComponent",
+  title: "entities/Article/ArticleCodeBlockComponent",
   component: ArticleCodeBlockComponent,
   parameters: {
     layout: "centered",

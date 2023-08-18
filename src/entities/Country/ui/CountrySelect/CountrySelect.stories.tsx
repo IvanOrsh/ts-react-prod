@@ -5,7 +5,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 
 const meta = {
-  title: "entities/CountrySelect",
+  title: "entities/Country/CountrySelect",
   component: CountrySelect,
   parameters: {
     layout: "centered",

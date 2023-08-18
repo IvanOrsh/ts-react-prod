@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { ArticleTextBlockComponent } from "./ArticleTextBlockComponent";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { ArticleBlockType } from "entities/Article/model/types/article";
+
 const meta = {
-  title: "entities/ArticleTextBlockComponent",
+  title: "entities/Article/ArticleTextBlockComponent",
   component: ArticleTextBlockComponent,
   parameters: {
     layout: "centered",

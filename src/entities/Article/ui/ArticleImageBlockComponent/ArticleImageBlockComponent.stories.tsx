@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { ArticleImageBlockComponent } from "./ArticleImageBlockComponent";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { ArticleBlockType } from "entities/Article/model/types/article";
+
 const meta = {
-  title: "entities/ArticleImageBlockComponent",
+  title: "entities/Article/ArticleImageBlockComponent",
   component: ArticleImageBlockComponent,
   parameters: {
     layout: "centered",
@@ -20,6 +22,9 @@ const meta = {
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 } satisfies Meta<typeof ArticleImageBlockComponent>;
+
 export default meta;
+
 type Story = StoryObj<typeof meta>;
+
 export const Primary: Story = {};

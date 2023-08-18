@@ -9,7 +9,7 @@ import {
 } from "entities/Article/model/types/article";
 
 const meta = {
-  title: "entities/ArticleDetails",
+  title: "entities/Article/ArticleDetails",
   component: ArticleDetails,
   parameters: {
     layout: "centered",
