@@ -37,6 +37,12 @@ export enum ArticleType {
   ART = "ART",
 }
 
+// TODO: better names
+export enum ArticleView {
+  BIG = "BIG", // detailed list
+  SMALL = "SMALL", // icon view, plate view, ...
+}
+
 export interface Article {
   id: string;
   title: string;
