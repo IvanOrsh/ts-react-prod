@@ -19,9 +19,8 @@
       "img": "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/38a9cafe-c53e-47f2-f431-428120462000/public",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "userId": "1",
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
