@@ -24,6 +24,12 @@ const meta = {
           id: "1",
           title: "Javascript news",
           subtitle: "Что нового в JS за 2022 год?",
+          user: {
+            id: "1",
+            username: "admin",
+            avatar:
+              "https://images.unsplash.com/photo-1570158268183-d296b2892211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+          },
           img: "https://imagedelivery.net/5MYSbk45M80qAwecrlKzdQ/38a9cafe-c53e-47f2-f431-428120462000/public",
           views: 1022,
           createdAt: "26.02.2022",
