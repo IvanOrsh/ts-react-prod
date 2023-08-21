@@ -6,7 +6,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 
 const meta = {
-  title: "/Card",
+  title: "shared/Card",
   component: Card,
   parameters: {
     layout: "centered",
